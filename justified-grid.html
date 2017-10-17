@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  
+  <script src="items.js"></script>
+  <script src="justified-layout.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.js"></script>
+
+  <script type="text/css" src="styles.css"></script>
+  
+  <link rel="stylesheet" href="style.css" type="text/css" media="all">
+
+</head>
+<body>
+  <div id="app3" class="grid">
+
+    <div class="filters">
+
+      <!-- <div v-for="(term, index) in filterTypes" class="filters__wrap">
+        <input v-model="activeFilters" class="styled-checkbox" :id="'styled-checkbox-' + index" type="checkbox" checked value="'value' + index">
+        <label :for="'styled-checkbox-' + index">{{ term }}</label>
+      </div> -->
+
+      <!-- Filters should be rendered dynamicly like above, not like below -->
+      
+      <div class="filters__wrap">
+        <input v-model="filterImages" class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+        <label for="styled-checkbox-1">Images</label>
+      </div>
+
+      <div class="filters__wrap">
+        <input v-model="filterVideos" class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2">
+        <label for="styled-checkbox-2">Videos</label>
+      </div>
+
+      <div class="filters__wrap">
+        <select v-model="activeFilters" class="select">
+          <option>All</option>
+          <option v-for="filterOption in filterCategories">{{ filterOption }}</option>
+        </select>
+      </div>
+
+    </div> <!-- end .filters -->
+
+    <div id="grid" class="container" :style="{ height: container.height + 'px' }">
+      <div 
+        class="item" 
+        v-for="item in filteredItems"
+        :style="currentStyle(item)">
+        <img :src="item.src" v-fadeit/>
+      </div>
+    </div>
+
+    <button @click="loadMore">Load More</button>
+
+  </div> <!-- end #app3 -->
+  
+  <script src="vue-justified-grid.js"></script>
+
+</body>
+</html>

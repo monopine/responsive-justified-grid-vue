@@ -1,0 +1,83 @@
+.grid {
+  width: 80%;
+  margin: 40px auto;
+  background: cornsilk;
+  position: relative;
+}
+
+#log {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 1.2rem;
+}
+
+.container {
+  background: cornsilk;
+  position: relative;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.filters {
+  padding: 8px 4px;
+}
+
+
+.filters__wrap {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.select {
+  background: white;
+  padding: 4px 12px;
+}
+
+button {
+  background: white;
+  border: 1px solid gray;
+  margin: 12px;
+}
+
+.item {
+  position: absolute;
+}
+
+.item img {
+  max-width: 100%;
+  width: 100%;
+  transition: 300ms linear opacity, 300ms linear top, 100ms linear transform;
+  transform: scale(1.25);
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 20px;
+}
+
+.item.loaded img {
+  visibility: visible;
+  opacity: 1;
+  top: 0;
+  transform: scale(1);
+}
+
+
+@media screen and ( min-width: 768px ){
+  .container {
+    max-width: 860px;
+  }
+}
+
+@media screen and ( min-width: 1024px ){
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media screen and ( min-width: 1250px ){
+  .container {
+    max-width: 1060px;
+  }
+}
